@@ -1,0 +1,24 @@
+@startuml Bookshelf
+
+class Book {
+    - category: str
+    - author: str
+    - title: str
+    -------------------
+    + __init__(category: str, author: str, title: str)
+    + get_title(): str
+    + __str__(): str
+}
+
+class Shelf {
+    - books: list
+    -------------------
+    + __init__()
+    + add_book(book: Book)
+    + sort_books()
+    + __str__(): str
+}
+
+Book -- Shelf : contains
+
+@enduml
